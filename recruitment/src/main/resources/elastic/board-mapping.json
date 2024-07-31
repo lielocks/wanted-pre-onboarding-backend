@@ -1,0 +1,29 @@
+{
+  "mappings": {
+    "properties": {
+      "boardId": {
+        "type": "keyword"
+      },
+      "companyName": {
+        "type": "text",
+        "analyzer": "korean"
+      },
+      "countryName": {
+        "type": "text"
+      },
+      "cityName": {
+        "type": "text"
+      },
+      "position": {
+        "type": "text",
+        "analyzer": "korean"
+      },
+      "reward": {
+        "type": "integer"
+      },
+      "skill": {
+        "type": "text"
+      }
+    }
+  }
+}
