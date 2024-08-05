@@ -24,4 +24,8 @@ public class Company {
 
     @OneToMany(mappedBy = "company", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Board> boards = new ArrayList<>();
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 }

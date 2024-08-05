@@ -2,10 +2,10 @@ package wanted.recruitment.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import wanted.recruitment.common.dto.PageResponse;
 import wanted.recruitment.common.exception.CustomException;
 import wanted.recruitment.domain.Board;
 import wanted.recruitment.domain.Company;
@@ -25,12 +25,14 @@ public class BoardService {
     private final BoardRepository boardRepository;
 
     @Transactional
-    public void register(BoardRegisterRequestDto requestDto) {
+    public Long register(BoardRegisterRequestDto requestDto) {
         Company company = companyRepository.findById(requestDto.getCompanyId())
                 .orElseThrow(() -> new CustomException(COMPANY_NOT_ALLOWED));
 
-        boardRepository.save(Board.builder().company(company).position(requestDto.getPosition())
-                .description(requestDto.getDescription()).reward(requestDto.getReward()).skill(requestDto.getSkill()).build());
+        Board savedBoard = boardRepository.save(Board.builder().company(company).position(requestDto.getPosition())
+                .description(requestDto.getDescription()).reward(requestDto.getReward())
+                .skill(requestDto.getSkill()).build());
+        return savedBoard.getId();
     }
 
     @Transactional
@@ -69,8 +71,8 @@ public class BoardService {
         boardRepository.delete(board);
     }
 
-    public Page<BoardInfoResponseDto> getBoardList(Pageable pageable) {
-         return boardRepository.boardInfoResponse(pageable);
+    public PageResponse<BoardInfoResponseDto> getBoardList(Pageable pageable) {
+         return new PageResponse<>(boardRepository.boardInfoResponse(pageable));
     }
 
     public BoardDetailResponseDto getBoardDetail(Long boardId, Long companyId) {

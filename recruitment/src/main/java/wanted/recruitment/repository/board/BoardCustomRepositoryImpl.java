@@ -65,7 +65,10 @@ public class BoardCustomRepositoryImpl implements BoardCustomRepository {
                 .where(board.company.id.eq(companyId))
                 .fetch();
 
-        boardDetailResponseDto.setBoardIdList(boardIdList);
+        if (boardDetailResponseDto != null) {
+            boardDetailResponseDto.setBoardIdList(boardIdList);
+        } else boardDetailResponseDto.setBoardIdList(null);
+
         return boardDetailResponseDto;
     }
 

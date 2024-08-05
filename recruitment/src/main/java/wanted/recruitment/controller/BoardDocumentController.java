@@ -1,17 +1,16 @@
 package wanted.recruitment.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import wanted.recruitment.domain.BoardDocument;
+import wanted.recruitment.dto.BoardDocumentResponseDto;
 import wanted.recruitment.service.DataSyncService;
 
 import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/public/document")
+@RequestMapping("/document")
 public class BoardDocumentController {
 
     private final DataSyncService dataSyncService;
@@ -19,15 +18,13 @@ public class BoardDocumentController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/register")
     public void registerElasticSearchData() {
-        dataSyncService.save();
+        dataSyncService.manualSave();
     }
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/search")
-    public List<BoardDocument> searchBoardDocuments(@RequestParam String keyword, Pageable pageable) {
-        return dataSyncService.searchBoardDocument(keyword, pageable);
+    public List<BoardDocumentResponseDto> searchBoardDocuments(@RequestParam String keyword) {
+        return dataSyncService.searchBoardDocument(keyword);
     }
-
-
 
 }

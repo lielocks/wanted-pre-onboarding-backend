@@ -15,4 +15,8 @@ public class Member {
     private Long id;
 
     private boolean submitted;
+
+    public void setSubmitted() {
+        this.submitted = true;
+    }
 }

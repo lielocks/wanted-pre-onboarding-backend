@@ -2,13 +2,14 @@ package wanted.recruitment.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import wanted.recruitment.common.model.BaseTimeEntity;
 
 @Entity
 @Builder
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Board {
+public class Board extends BaseTimeEntity {
     @Id
     @Column(name = "board_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,5 +41,16 @@ public class Board {
 
     public void setSkill(String skill) {
         this.skill = skill;
+    }
+
+    @Override
+    public String toString() {
+        return "Board{" +
+                "id=" + id +
+                ", reward=" + reward +
+                ", description='" + description + '\'' +
+                ", position='" + position + '\'' +
+                ", skill='" + skill + '\'' +
+                '}';
     }
 }
