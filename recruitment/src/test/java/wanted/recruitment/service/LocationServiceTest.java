@@ -12,14 +12,15 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import wanted.recruitment.common.config.QueryDslConfig;
 import wanted.recruitment.common.exception.CustomException;
-import wanted.recruitment.domain.Company;
-import wanted.recruitment.domain.Location;
-import wanted.recruitment.dto.CompanyRegisterRequestDto;
+import wanted.recruitment.domain.company.Company;
+import wanted.recruitment.domain.location.Location;
+import wanted.recruitment.dto.company.CompanyRegisterRequestDto;
 import wanted.recruitment.repository.company.CompanyRepository;
 import wanted.recruitment.repository.location.CityRepository;
 import wanted.recruitment.repository.location.CountryRepository;
 import wanted.recruitment.repository.location.LocationRepository;
 import wanted.recruitment.repository.location.RegionRepository;
+import wanted.recruitment.service.location.LocationService;
 
 import java.util.Arrays;
 import java.util.List;
