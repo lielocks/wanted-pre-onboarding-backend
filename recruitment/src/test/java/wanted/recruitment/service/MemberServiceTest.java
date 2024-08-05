@@ -12,9 +12,10 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import wanted.recruitment.common.config.QueryDslConfig;
 import wanted.recruitment.common.exception.CustomException;
-import wanted.recruitment.domain.Member;
-import wanted.recruitment.dto.MemberApplyRequestDto;
+import wanted.recruitment.domain.member.Member;
+import wanted.recruitment.dto.member.MemberApplyRequestDto;
 import wanted.recruitment.repository.member.MemberRepository;
+import wanted.recruitment.service.member.MemberService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

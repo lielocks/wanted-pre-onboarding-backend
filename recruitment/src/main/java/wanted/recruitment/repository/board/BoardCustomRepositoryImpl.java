@@ -8,16 +8,16 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.support.PageableExecutionUtils;
 import wanted.recruitment.common.config.QueryDslConfig;
-import wanted.recruitment.dto.BoardDetailResponseDto;
-import wanted.recruitment.dto.BoardInfoResponseDto;
+import wanted.recruitment.dto.board.BoardDetailResponseDto;
+import wanted.recruitment.dto.board.BoardInfoResponseDto;
 
 import java.util.List;
 
-import static wanted.recruitment.domain.QBoard.*;
-import static wanted.recruitment.domain.QCity.*;
-import static wanted.recruitment.domain.QCompany.*;
-import static wanted.recruitment.domain.QCountry.*;
-import static wanted.recruitment.domain.QLocation.location;
+import static wanted.recruitment.domain.board.QBoard.board;
+import static wanted.recruitment.domain.company.QCompany.company;
+import static wanted.recruitment.domain.location.QCity.city;
+import static wanted.recruitment.domain.location.QCountry.country;
+import static wanted.recruitment.domain.location.QLocation.location;
 
 @Slf4j
 @RequiredArgsConstructor

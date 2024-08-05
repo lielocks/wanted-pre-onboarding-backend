@@ -15,10 +15,10 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import wanted.recruitment.common.dto.PageResponse;
-import wanted.recruitment.dto.BoardDetailResponseDto;
-import wanted.recruitment.dto.BoardInfoResponseDto;
+import wanted.recruitment.dto.board.BoardDetailResponseDto;
+import wanted.recruitment.dto.board.BoardInfoResponseDto;
 import wanted.recruitment.repository.board.BoardRepository;
-import wanted.recruitment.service.BoardService;
+import wanted.recruitment.service.board.BoardService;
 
 import java.util.Arrays;
 import java.util.List;

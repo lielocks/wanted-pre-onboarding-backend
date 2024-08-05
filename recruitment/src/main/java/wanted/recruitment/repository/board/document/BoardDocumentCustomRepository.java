@@ -1,7 +1,7 @@
 package wanted.recruitment.repository.board.document;
 
-import wanted.recruitment.domain.BoardDocument;
-import wanted.recruitment.dto.BoardDocumentResponseDto;
+import wanted.recruitment.domain.board.BoardDocument;
+import wanted.recruitment.dto.board.BoardDocumentResponseDto;
 
 import java.util.List;
 

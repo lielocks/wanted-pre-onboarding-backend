@@ -9,9 +9,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import wanted.recruitment.common.config.QueryDslConfig;
-import wanted.recruitment.domain.Company;
-import wanted.recruitment.dto.CompanyRegisterRequestDto;
+import wanted.recruitment.domain.company.Company;
+import wanted.recruitment.dto.company.CompanyRegisterRequestDto;
 import wanted.recruitment.repository.company.CompanyRepository;
+import wanted.recruitment.service.company.CompanyService;
+import wanted.recruitment.service.location.LocationService;
 
 import java.util.Arrays;
 import java.util.List;

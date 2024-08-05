@@ -12,11 +12,12 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import wanted.recruitment.common.config.QueryDslConfig;
 import wanted.recruitment.common.exception.CustomException;
-import wanted.recruitment.domain.Board;
-import wanted.recruitment.dto.BoardRegisterRequestDto;
-import wanted.recruitment.dto.BoardUpdateRequestDto;
+import wanted.recruitment.domain.board.Board;
+import wanted.recruitment.dto.board.BoardRegisterRequestDto;
+import wanted.recruitment.dto.board.BoardUpdateRequestDto;
 import wanted.recruitment.repository.board.BoardRepository;
 import wanted.recruitment.repository.company.CompanyRepository;
+import wanted.recruitment.service.board.BoardService;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static wanted.recruitment.common.exception.CustomError.BOARD_NOT_EXIST;

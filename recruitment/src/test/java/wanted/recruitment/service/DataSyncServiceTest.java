@@ -5,13 +5,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import wanted.recruitment.domain.Board;
-import wanted.recruitment.domain.BoardDocument;
-import wanted.recruitment.domain.Company;
+import wanted.recruitment.domain.board.Board;
+import wanted.recruitment.domain.board.BoardDocument;
+import wanted.recruitment.domain.company.Company;
 import wanted.recruitment.repository.board.BoardRepository;
 import wanted.recruitment.repository.board.SyncStatusRepository;
 import wanted.recruitment.repository.board.document.BoardDocumentRepository;
 import wanted.recruitment.repository.company.CompanyRepository;
+import wanted.recruitment.service.board.DataSyncService;
 
 import java.util.List;
 
