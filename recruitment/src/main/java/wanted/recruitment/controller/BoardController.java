@@ -17,8 +17,8 @@ public class BoardController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/register")
-    public void register(@RequestBody BoardRegisterRequestDto requestDto) {
-        boardService.register(requestDto);
+    public Long register(@RequestBody BoardRegisterRequestDto requestDto) {
+        return boardService.register(requestDto);
     }
 
     @ResponseStatus(HttpStatus.OK)
@@ -28,14 +28,14 @@ public class BoardController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @DeleteMapping("/delete")
-    public void delete(@RequestHeader Long companyId, @RequestBody BoardIdRequestDto requestDto) {
-        boardService.delete(requestDto.getBoardId(), companyId);
+    @DeleteMapping("/delete/{boardId}")
+    public void delete(@RequestHeader Long companyId, @PathVariable Long boardId) {
+        boardService.delete(boardId, companyId);
     }
 
     @GetMapping("/list")
     public PageResponse<BoardInfoResponseDto> boardList(Pageable pageable) {
-        return new PageResponse<>(boardService.getBoardList(pageable));
+        return boardService.getBoardList(pageable);
     }
 
     @GetMapping("/detail")

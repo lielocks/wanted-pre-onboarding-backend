@@ -1,10 +1,11 @@
 package wanted.recruitment.repository.board.document;
 
-import org.springframework.data.domain.Pageable;
 import wanted.recruitment.domain.BoardDocument;
+import wanted.recruitment.dto.BoardDocumentResponseDto;
 
 import java.util.List;
 
 public interface BoardDocumentCustomRepository {
-    List<BoardDocument> searchBoardDocument(String keyword, Pageable pageable);
+    List<BoardDocumentResponseDto> searchBoardDocument(String keyword);
+    List<BoardDocument> findAll();
 }
